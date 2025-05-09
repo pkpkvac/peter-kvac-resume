@@ -1,75 +1,118 @@
-import { Link } from "react-router-dom";
+import Container from "../components/Container";
+import Card from "../components/Card";
+import SocialLinks from "../components/SocialLinks";
 
 const HomePage = () => {
 	return (
-		<div className="bg-white min-h-screen">
+		<div className="bg-white">
 			{/* Hero Section */}
 			<section
-				className="py-32 bg-cover bg-center"
 				style={{
 					backgroundImage:
 						"url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					height: "40vh",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
 				}}
 			>
-				<div className="container mx-auto text-center px-4">
-					<div className="bg-white bg-opacity-80 py-12 px-8 rounded-lg max-w-3xl mx-auto">
-						<h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-800">
-							Hi! I'm Peter.
-						</h1>
-						<h2 className="text-2xl md:text-3xl mb-6 text-gray-700">
-							A cloud engineer and developer.
-						</h2>
-					</div>
+				<div
+					style={{
+						maxWidth: "1140px",
+						margin: "0 auto",
+						padding: "0 1rem",
+						textAlign: "center",
+					}}
+				>
+					<h1
+						style={{
+							fontSize: "3.5rem",
+							fontWeight: "bold",
+							marginBottom: "1.5rem",
+							color: "white",
+							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+						}}
+					>
+						Hi! I'm Peter.
+					</h1>
+					<h2
+						style={{
+							fontSize: "1.875rem",
+							color: "white",
+							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+						}}
+					>
+						A cloud engineer and developer.
+					</h2>
 				</div>
 			</section>
 
 			{/* Welcome Section */}
-			<section className="py-16">
-				<div className="container mx-auto text-center px-4">
-					<h2 className="text-3xl font-bold mb-16 text-gray-800">
+			<section className="py-24">
+				<div
+					style={{
+						maxWidth: "1140px",
+						margin: "0 auto",
+						padding: "0 1rem",
+						textAlign: "center",
+					}}
+				>
+					<h2 className="text-3xl font-bold mb-20 text-gray-800">
 						Welcome to my portfolio page.
 					</h2>
 
-					{/* Cards Section */}
-					<div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-						{/* About Me Card */}
-						<div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105">
-							<div className="p-8 flex flex-col items-center">
-								<i className="fas fa-user text-5xl text-orange-500 mb-6"></i>
-								<h3 className="text-2xl font-bold mb-4 text-gray-800">
-									About Me
-								</h3>
-								<p className="text-gray-600 mb-6 text-center">
+					{/* Cards Section - Using table layout for guaranteed side-by-side */}
+					<div
+						style={{ display: "table", width: "100%", tableLayout: "fixed" }}
+					>
+						<div style={{ display: "table-row" }}>
+							<div style={{ display: "table-cell", padding: "0 1rem" }}>
+								<Card
+									title="About Me"
+									linkTo="/about"
+									icon={
+										<i className="fas fa-user text-5xl text-brand-orange"></i>
+									}
+									buttonColor="bg-brand-orange hover:bg-opacity-90"
+								>
 									AWS. Python. Passion.
-								</p>
-								<Link
-									to="/about"
-									className="inline-block bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition"
-								>
-									Learn More
-								</Link>
+								</Card>
 							</div>
-						</div>
-
-						{/* Resume Card */}
-						<div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105">
-							<div className="p-8 flex flex-col items-center">
-								<i className="fas fa-file-code text-5xl text-blue-500 mb-6"></i>
-								<h3 className="text-2xl font-bold mb-4 text-gray-800">
-									Resume
-								</h3>
-								<p className="text-gray-600 mb-6 text-center">
-									My professional experience.
-								</p>
-								<Link
-									to="/resume"
-									className="inline-block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition"
+							<div style={{ display: "table-cell", padding: "0 1rem" }}>
+								<Card
+									title="Resume"
+									linkTo="/resume"
+									icon={
+										<i className="fas fa-file-code text-5xl text-blue-500"></i>
+									}
+									buttonText="View Resume"
 								>
-									View Resume
-								</Link>
+									My professional experience.
+								</Card>
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			{/* Contact Me Section */}
+			<section className="py-16 bg-blue-600 text-white">
+				<div
+					style={{
+						maxWidth: "1140px",
+						margin: "0 auto",
+						padding: "0 1rem",
+						textAlign: "center",
+					}}
+				>
+					<h2 className="text-3xl font-bold mb-10">Contact Me!</h2>
+					<SocialLinks
+						iconSize="text-5xl"
+						className="mb-4"
+						iconColor="text-white"
+					/>
 				</div>
 			</section>
 		</div>

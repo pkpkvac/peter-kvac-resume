@@ -5,22 +5,34 @@ type CardProps = {
 	title: string;
 	linkTo: string;
 	children: ReactNode;
+	icon?: ReactNode;
+	buttonText?: string;
+	buttonColor?: string;
 };
 
-const Card = ({ title, linkTo, children }: CardProps) => {
+const Card = ({
+	title,
+	linkTo,
+	children,
+	icon,
+	buttonText = "Learn More",
+	buttonColor = "bg-blue-600 hover:bg-opacity-90",
+}: CardProps) => {
 	return (
-		<div className="bg-white rounded-lg shadow-lg overflow-hidden">
-			<div className="p-6">
-				<h3 className="text-2xl font-bold mb-4">{title}</h3>
-				<div className="mb-4">{children}</div>
-				<Link
-					to={linkTo}
-					className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-				>
-					Learn More
-				</Link>
+		<Link to={linkTo} className="block">
+			<div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105 h-full">
+				<div className="p-10 flex flex-col items-center">
+					{icon && <div className="mb-6">{icon}</div>}
+					<h3 className="text-2xl font-bold mb-4 text-gray-800">{title}</h3>
+					<div className="mb-6 text-center text-gray-600">{children}</div>
+					<div
+						className={`inline-block ${buttonColor} text-white px-6 py-2 rounded-full`}
+					>
+						{buttonText}
+					</div>
+				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 
