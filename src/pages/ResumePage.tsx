@@ -398,8 +398,31 @@ const ResumePage = () => {
 							</div>
 						</div>
 
-						{/* Add more job experiences here following the same pattern */}
-						{/* For brevity, I've only included the first job. You can add the rest following the same pattern */}
+						{/* Indicator for more experience */}
+						<div
+							style={{
+								textAlign: "center",
+								margin: "2rem 0",
+								padding: "1rem",
+								backgroundColor: "#f8f8f8",
+								borderRadius: "0.5rem",
+								border: "1px dashed #FF6B35",
+							}}
+						>
+							<p
+								style={{
+									fontSize: "1.1rem",
+									color: "#555",
+									fontStyle: "italic",
+								}}
+							>
+								<span style={{ fontWeight: "bold", color: "#FF6B35" }}>
+									Additional Experience:
+								</span>{" "}
+								My full resume includes positions at Tantalus Systems, Avigilon,
+								and more professional experience.
+							</p>
+						</div>
 
 						<div style={{ textAlign: "center", marginTop: "2rem" }}>
 							<a
