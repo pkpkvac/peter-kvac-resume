@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+	const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
 	return (
 		<nav className="bg-white shadow-md text-gray-800 py-6 sticky top-0 z-10">
 			<div
@@ -18,33 +21,36 @@ const Navbar = () => {
 						<Link
 							to="/"
 							style={{
-								color: "black",
+								color: hoveredLink === "home" ? "#FF6B35" : "black",
 								fontWeight: 500,
 								transition: "color 0.3s ease",
 							}}
-							className="hover:text-[#FF6B35]"
+							onMouseEnter={() => setHoveredLink("home")}
+							onMouseLeave={() => setHoveredLink(null)}
 						>
 							Home
 						</Link>
 						<Link
 							to="/about"
 							style={{
-								color: "black",
+								color: hoveredLink === "about" ? "#FF6B35" : "black",
 								fontWeight: 500,
 								transition: "color 0.3s ease",
 							}}
-							className="hover:text-[#FF6B35]"
+							onMouseEnter={() => setHoveredLink("about")}
+							onMouseLeave={() => setHoveredLink(null)}
 						>
 							About
 						</Link>
 						<Link
 							to="/resume"
 							style={{
-								color: "black",
+								color: hoveredLink === "resume" ? "#FF6B35" : "black",
 								fontWeight: 500,
 								transition: "color 0.3s ease",
 							}}
-							className="hover:text-[#FF6B35]"
+							onMouseEnter={() => setHoveredLink("resume")}
+							onMouseLeave={() => setHoveredLink(null)}
 						>
 							Resume
 						</Link>

@@ -7,7 +7,27 @@ const AboutPage = () => {
 				<div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
 					<h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
 
-					<div className="space-y-4 text-gray-700">
+					{/* Profile Image - Circular */}
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							marginBottom: "2rem",
+						}}
+					>
+						<img
+							src="/peter.jpg"
+							alt="Peter Kvac"
+							style={{
+								width: "350px",
+								height: "350px",
+								borderRadius: "50%",
+								objectFit: "cover",
+							}}
+						/>
+					</div>
+
+					<div className="space-y-8 text-gray-700">
 						<p className="text-lg">
 							I'm a Full Stack & DevOps Software Engineer based in Vancouver
 							with experience in building modern web applications and cloud
@@ -27,32 +47,21 @@ const AboutPage = () => {
 							landscape.
 						</p>
 
-						<div className="mt-8 pt-6 border-t border-gray-200">
-							<h3 className="text-xl font-semibold mb-4">
-								Contact Information
-							</h3>
-							<p className="mb-2">
-								<span className="font-medium">Email:</span>{" "}
-								<a
-									href="mailto:pkvac89@outlook.com"
-									className="text-blue-600 hover:underline"
-								>
-									pkvac89@outlook.com
-								</a>
-							</p>
-							<p className="mb-4">
-								<span className="font-medium">Phone:</span>{" "}
-								<a
-									href="tel:+16044463529"
-									className="text-blue-600 hover:underline"
-								>
-									(604) 446-3529
-								</a>
-							</p>
+						<p className="text-lg">
+							My goal is to leverage my technical skills and experience to
+							contribute to a team that is building products that make a
+							difference in the world.
+						</p>
 
-							<h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
-							<SocialLinks />
-						</div>
+						<p className="text-lg">
+							Outside of work, I enjoy hiking, lifting weights, and spending
+							time with friends.
+						</p>
+
+						<h3 className="text-2xl font-semibold mb-4 text-center">
+							Connect With Me
+						</h3>
+						<SocialLinks />
 					</div>
 				</div>
 			</div>

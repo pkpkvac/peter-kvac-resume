@@ -50,7 +50,7 @@ const HomePage = () => {
 			</section>
 
 			{/* Welcome Section */}
-			<section className="py-24">
+			<section className="">
 				<div
 					style={{
 						maxWidth: "1140px",
@@ -59,13 +59,14 @@ const HomePage = () => {
 						textAlign: "center",
 					}}
 				>
-					<h2 className="text-3xl font-bold mb-20 text-gray-800">
+					<h2 className="text-3xl font-bold text-gray-800 py-20">
 						Welcome to my portfolio page.
 					</h2>
 
 					{/* Cards Section - Using table layout for guaranteed side-by-side */}
 					<div
 						style={{ display: "table", width: "100%", tableLayout: "fixed" }}
+						className="mb-20"
 					>
 						<div style={{ display: "table-row" }}>
 							<div style={{ display: "table-cell", padding: "0 1rem" }}>
@@ -77,7 +78,7 @@ const HomePage = () => {
 									}
 									buttonColor="bg-brand-orange hover:bg-opacity-90"
 								>
-									AWS. Python. Passion.
+									AWS. Python. Typescript. Java. Passion.
 								</Card>
 							</div>
 							<div style={{ display: "table-cell", padding: "0 1rem" }}>
@@ -98,12 +99,12 @@ const HomePage = () => {
 			</section>
 
 			{/* Contact Me Section */}
-			<section className="py-16 bg-blue-600 text-white">
+			<section className="py-10 bg-[#033242] text-white">
 				<div
 					style={{
 						maxWidth: "1140px",
 						margin: "0 auto",
-						padding: "0 1rem",
+						// padding: "0 1rem",
 						textAlign: "center",
 					}}
 				>

@@ -12,7 +12,7 @@ const SocialLinks = ({
 	return (
 		<div className={`flex justify-center space-x-12 ${className}`}>
 			<a
-				href="https://linkedin.com/in/yourprofile"
+				href="https://www.linkedin.com/in/peter-kvac-04888917b/"
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`${iconSize} ${
@@ -22,7 +22,7 @@ const SocialLinks = ({
 				<i className="fab fa-linkedin"></i>
 			</a>
 			<a
-				href="https://github.com/yourusername"
+				href="https://github.com/pkpkvac"
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`${iconSize} ${
