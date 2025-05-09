@@ -1,4 +1,3 @@
-import Container from "../components/Container";
 import Card from "../components/Card";
 import SocialLinks from "../components/SocialLinks";
 
