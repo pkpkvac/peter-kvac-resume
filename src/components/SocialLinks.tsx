@@ -22,7 +22,7 @@ const SocialLinks = ({
 				<i className="fab fa-linkedin"></i>
 			</a>
 			<a
-				href="https://github.com/pkpkvac"
+				href="https://github.com/pkpkvac/Algorithms"
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`${iconSize} ${

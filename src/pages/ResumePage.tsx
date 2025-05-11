@@ -1,4 +1,22 @@
+import { useState, useEffect } from "react";
+
 const ResumePage = () => {
+	const [padding, setPadding] = useState(
+		window.innerWidth < 768 ? "2rem" : "8rem"
+	);
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+	useEffect(() => {
+		const handleResize = () => {
+			const mobile = window.innerWidth < 768;
+			setPadding(mobile ? "2rem" : "8rem");
+			setIsMobile(mobile);
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
 		<div className="bg-gray-100 min-h-screen py-16">
 			<div style={{ maxWidth: "1140px", margin: "0 auto", padding: "0 2rem" }}>
@@ -7,7 +25,7 @@ const ResumePage = () => {
 						backgroundColor: "white",
 						borderRadius: "0.5rem",
 						boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-						padding: "8rem",
+						padding: padding,
 						marginBottom: "2rem",
 					}}
 				>
@@ -44,9 +62,11 @@ const ResumePage = () => {
 						<div
 							style={{
 								display: "flex",
+								flexDirection: isMobile ? "column" : "row",
 								justifyContent: "center",
-								fontSize: "1.25rem",
-								gap: "1.5rem",
+								alignItems: "center",
+								fontSize: isMobile ? "1rem" : "1.25rem",
+								gap: "1rem",
 								color: "#FF6B35",
 								textTransform: "uppercase",
 							}}

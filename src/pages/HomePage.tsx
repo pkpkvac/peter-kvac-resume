@@ -1,7 +1,19 @@
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import SocialLinks from "../components/SocialLinks";
 
 const HomePage = () => {
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
 		<div className="bg-white">
 			{/* Hero Section */}
@@ -43,7 +55,7 @@ const HomePage = () => {
 							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
 						}}
 					>
-						A cloud engineer and developer.
+						A cloud engineer and developer. Test1
 					</h2>
 				</div>
 			</section>
@@ -62,37 +74,70 @@ const HomePage = () => {
 						Welcome to my portfolio page.
 					</h2>
 
-					{/* Cards Section - Using table layout for guaranteed side-by-side */}
+					{/* Cards Section - Responsive layout */}
 					<div
-						style={{ display: "table", width: "100%", tableLayout: "fixed" }}
-						className="mb-20"
+						className={`mb-20 ${isMobile ? "flex flex-col gap-8" : ""}`}
+						style={
+							isMobile
+								? {}
+								: { display: "table", width: "100%", tableLayout: "fixed" }
+						}
 					>
-						<div style={{ display: "table-row" }}>
-							<div style={{ display: "table-cell", padding: "0 1rem" }}>
-								<Card
-									title="About Me"
-									linkTo="/about"
-									icon={
-										<i className="fas fa-user text-5xl text-brand-orange"></i>
-									}
-									buttonColor="bg-brand-orange hover:bg-opacity-90"
-								>
-									AWS. Python. Typescript. Java. Passion.
-								</Card>
+						{isMobile ? (
+							<>
+								<div className="px-4">
+									<Card
+										title="About Me"
+										linkTo="/about"
+										icon={
+											<i className="fas fa-user text-5xl text-brand-orange"></i>
+										}
+										buttonColor="bg-brand-orange hover:bg-opacity-90"
+									>
+										AWS. Python. Typescript. Java. Passion.
+									</Card>
+								</div>
+								<div className="px-4">
+									<Card
+										title="Resume"
+										linkTo="/resume"
+										icon={
+											<i className="fas fa-file-code text-5xl text-blue-500"></i>
+										}
+										buttonText="View Resume"
+									>
+										My professional experience.
+									</Card>
+								</div>
+							</>
+						) : (
+							<div style={{ display: "table-row" }}>
+								<div style={{ display: "table-cell", padding: "0 1rem" }}>
+									<Card
+										title="About Me"
+										linkTo="/about"
+										icon={
+											<i className="fas fa-user text-5xl text-brand-orange"></i>
+										}
+										buttonColor="bg-brand-orange hover:bg-opacity-90"
+									>
+										AWS. Python. Typescript. Java. Passion.
+									</Card>
+								</div>
+								<div style={{ display: "table-cell", padding: "0 1rem" }}>
+									<Card
+										title="Resume"
+										linkTo="/resume"
+										icon={
+											<i className="fas fa-file-code text-5xl text-blue-500"></i>
+										}
+										buttonText="View Resume"
+									>
+										My professional experience.
+									</Card>
+								</div>
 							</div>
-							<div style={{ display: "table-cell", padding: "0 1rem" }}>
-								<Card
-									title="Resume"
-									linkTo="/resume"
-									icon={
-										<i className="fas fa-file-code text-5xl text-blue-500"></i>
-									}
-									buttonText="View Resume"
-								>
-									My professional experience.
-								</Card>
-							</div>
-						</div>
+						)}
 					</div>
 				</div>
 			</section>
