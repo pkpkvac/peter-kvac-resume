@@ -55,7 +55,7 @@ const HomePage = () => {
 							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
 						}}
 					>
-						A cloud engineer and developer. Test1
+						A cloud engineer and developer.
 					</h2>
 				</div>
 			</section>
