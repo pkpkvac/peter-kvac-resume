@@ -45,8 +45,9 @@ jobs:
         run: |
           aws cloudfront create-invalidation --distribution-id E3J0OMFCAK8BBN --paths "/*"
 
+      - name: Install Cypress
+        run: npm install cypress
+
       - name: Run Cypress tests
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          config: baseUrl=https://www.peter-kvac.com
+        run: |
+          npx cypress run --browser chrome --config baseUrl=https://www.peter-kvac.com
