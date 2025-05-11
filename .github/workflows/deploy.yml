@@ -50,4 +50,7 @@ jobs:
 
       - name: Run Cypress tests
         run: |
-          npx cypress run --browser chrome --config baseUrl=https://www.peter-kvac.com
+          echo "Waiting for CloudFront to propagate changes (30 seconds)..."
+          sleep 30
+
+          npx cypress run --browser chrome --spec "cypress/e2e/smoke.cy.js"

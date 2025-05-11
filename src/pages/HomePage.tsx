@@ -73,6 +73,11 @@ const HomePage = () => {
 					<h2 className="text-3xl font-bold text-gray-800 py-20">
 						Welcome to my portfolio page.
 					</h2>
+					<p className="text-lg text-gray-600 italic mb-14">
+						This site was built using React, TypeScript, and Tailwind CSS.
+						Deployed with GitHub Actions, AWS S3, CloudFront, and Route 53.
+						Infrastructure managed with Terraform and tested with Cypress.
+					</p>
 
 					{/* Cards Section - Responsive layout */}
 					<div
