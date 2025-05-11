@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,25 +26,9 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Save build directory
+      - name: Copy resume PDF to build directory
         run: |
-          mkdir -p /tmp/build-output
-          cp -r dist/* /tmp/build-output/
-
-  deploy-infrastructure:
-    needs: build
-    runs-on: ubuntu-latest
-    outputs:
-      bucket_name: ${{ steps.terraform-outputs.outputs.bucket_name }}
-      cloudfront_distribution_id: ${{ steps.terraform-outputs.outputs.cloudfront_distribution_id }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.5.0
+          cp ./public/peter-kvac-resume.pdf ./dist/
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -53,91 +37,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
 
-      - name: Terraform Init
-        run: |
-          cd terraform
-          terraform init
-
-      - name: Terraform Plan
-        run: |
-          cd terraform
-          terraform plan -out=tfplan
-
-      - name: Terraform Apply
-        run: |
-          cd terraform
-          terraform apply -auto-approve tfplan
-
-      - name: Save Terraform outputs
-        id: terraform-outputs
-        run: |
-          cd terraform
-          echo "bucket_name=$(terraform output -raw website_bucket_name)" >> $GITHUB_OUTPUT
-          echo "cloudfront_distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> $GITHUB_OUTPUT
-
-  deploy-content:
-    needs: [build, deploy-infrastructure]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
-
-      - name: Configure AWS credentials for S3
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
-
-      - name: Copy resume PDF to build directory
-        run: |
-          cp ./public/peter-kvac-resume.pdf ./dist/
-
       - name: Deploy to S3
         run: |
           aws s3 sync ./dist s3://peter-kvac-resume-bucket --delete
 
-      - name: Configure AWS credentials for CloudFront
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ needs.deploy-infrastructure.outputs.cloudfront_distribution_id }} --paths "/*"
-
-  smoke-test:
-    needs: deploy-content
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-
-      - name: Install Cypress
-        run: |
-          npm install cypress
+          aws cloudfront create-invalidation --distribution-id E3J0OMFCAK8BBN --paths "/*"
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
