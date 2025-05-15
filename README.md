@@ -1,54 +1,76 @@
-# React + TypeScript + Vite
+## Technology Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router
+- **Testing**: Cypress
+- **CI/CD**: GitHub Actions
+- **Hosting**: AWS (S3, CloudFront, Route 53)
+- **Backend**: Serverless (Lambda, API Gateway, RDS MySQL)
+- **Infrastructure**: Terraform
 
-Currently, two official plugins are available:
+## Architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application follows a modern serverless architecture:
 
-## Expanding the ESLint configuration
+- **Static Website**: Hosted on S3 and distributed via CloudFront
+- **API Layer**: AWS API Gateway exposing Lambda functions
+- **Backend Logic**: AWS Lambda functions for visitor counting
+- **Database**: RDS MySQL for storing visitor data
+- **DNS**: Route 53 for domain management
+- **Infrastructure as Code**: All AWS resources managed with Terraform
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Responsive design for all device sizes
+- Dynamic visitor counter
+- Portfolio showcasing projects and skills
+- Resume/CV page
+- Contact information
+
+## Local Development
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/resume-app.git
+   cd resume-app
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+## Building for Production
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The build artifacts will be stored in the `dist/` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Testing
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm run test
 ```
+
+## Deployment
+
+The website is automatically deployed through GitHub Actions when changes are pushed to the main branch.
+
+## Backend Repository
+
+The backend code for the visitor counter is available in a separate repository:
+[resume-app-backend](https://github.com/pkpkvac/resume-app-backend)

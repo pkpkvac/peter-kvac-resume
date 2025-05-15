@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import SocialLinks from "../components/SocialLinks";
+import VisitorCounter from "../components/VisitorCounter";
 
 const HomePage = () => {
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -75,9 +76,15 @@ const HomePage = () => {
 					</h2>
 					<p className="text-lg text-gray-600 italic mb-14">
 						This site was built using React, TypeScript, and Tailwind CSS.
-						Deployed with GitHub Actions, AWS S3, CloudFront, and Route 53.
-						Infrastructure managed with Terraform and tested with Cypress.
+						Deployed with GitHub Actions, AWS S3, CloudFront, and Route 53. The
+						visitor counter uses AWS Lambda, API Gateway, and RDS MySQL. All
+						infrastructure managed with Terraform and tested with Cypress.
 					</p>
+
+					{/* Visitor Counter */}
+					<div className="mb-10">
+						<VisitorCounter />
+					</div>
 
 					{/* Cards Section - Responsive layout */}
 					<div
