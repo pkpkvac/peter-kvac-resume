@@ -229,34 +229,26 @@ const ResumePage = () => {
 								FULL STACK DEVELOPER, LNG STUDIOS — JULY 2024 - PRESENT
 							</h3>
 
-							<div style={{ marginLeft: "1rem" }}>
-								<p style={{ fontWeight: "bold", marginBottom: "0.5rem" }}>
+							<div className="ml-4">
+								<p className="font-bold mb-2">
 									AI Automatic Portal Creator for Real Estate Marketing websites
 								</p>
-								<ul style={{ listStyleType: "none", paddingLeft: "1rem" }}>
-									<li
-										style={{
-											display: "flex",
-											alignItems: "flex-start",
-											marginBottom: "0.5rem",
-										}}
-									>
-										<span style={{ marginRight: "0.5rem" }}>•</span>
-										<a
-											href="https://m6.proxima-portals.com"
-											target="_blank"
-											rel="noopener noreferrer"
-											style={{ color: "#FF6B35", textDecoration: "none" }}
-											onMouseOver={(e) =>
-												(e.currentTarget.style.textDecoration = "underline")
-											}
-											onMouseOut={(e) =>
-												(e.currentTarget.style.textDecoration = "none")
-											}
-										>
-											m6.proxima-portals.com
-										</a>
-										, password: m6
+								<ul className="list-none pl-4">
+									<li className="flex flex-col mb-2">
+										<div className="flex items-start">
+											<span className="mr-2">•</span>
+											<a
+												href="https://m6.proxima-portals.com"
+												target="_blank"
+												rel="noopener noreferrer"
+												className="text-brand-orange hover:underline"
+											>
+												m6.proxima-portals.com
+											</a>
+										</div>
+										<div className="ml-6 text-sm text-gray-600">
+											Password: m6
+										</div>
 									</li>
 									<li
 										style={{
