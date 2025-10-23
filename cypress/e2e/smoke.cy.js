@@ -2,7 +2,7 @@ describe("Smoke Test", () => {
 	it("should load the homepage", () => {
 		cy.visit("/");
 		cy.contains("Hi! I'm Peter.");
-		cy.contains("A cloud engineer and developer.");
+		cy.contains("an infrastructure and full stack developer.");
 	});
 
 	it("should navigate to About page", () => {

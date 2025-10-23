@@ -29,10 +29,12 @@ const AboutPage = () => {
 
 					<div className="space-y-8 text-gray-700">
 						<p className="text-lg">
-							I'm a Full Stack & DevOps Software Engineer based in Vancouver
-							with experience in building modern web applications and cloud
-							infrastructure. I specialize in AWS, Docker, CI/CD, and full-stack
-							development with Java (Spring), TypeScript, React, and Node.js.
+							I'm a Full Stack & Infrastructure Software Engineer based in
+							Vancouver with experience in building modern web applications and
+							infrastructure services. I specialize in AWS, GCP, Docker &
+							Kubernetes, CI/CD, Microservices Architecture & Design, and
+							full-stack development with Golang, TypeScript, React, and
+							Node.js.
 						</p>
 
 						<p className="text-lg">
@@ -54,8 +56,8 @@ const AboutPage = () => {
 						</p>
 
 						<p className="text-lg">
-							Outside of work, I enjoy hiking, lifting weights, and spending
-							time with friends.
+							Outside of work, I enjoy hiking, lifting weights, boxing, and
+							spending time with friends.
 						</p>
 
 						<h3 className="text-2xl font-semibold mb-4 text-center">

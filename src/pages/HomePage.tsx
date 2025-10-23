@@ -56,7 +56,7 @@ const HomePage = () => {
 							textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
 						}}
 					>
-						A cloud engineer and developer.
+						an infrastructure and full stack developer.
 					</h2>
 				</div>
 			</section>
@@ -106,7 +106,7 @@ const HomePage = () => {
 										}
 										buttonColor="bg-brand-orange hover:bg-opacity-90"
 									>
-										AWS. Python. Typescript. Java. Passion.
+										AWS. GCP. Typescript. Golang. Passion.
 									</Card>
 								</div>
 								<div className="px-4">
@@ -133,7 +133,7 @@ const HomePage = () => {
 										}
 										buttonColor="bg-brand-orange hover:bg-opacity-90"
 									>
-										AWS. Python. Typescript. Java. Passion.
+										AWS. GCP. Typescript. Golang. Passion.
 									</Card>
 								</div>
 								<div style={{ display: "table-cell", padding: "0 1rem" }}>

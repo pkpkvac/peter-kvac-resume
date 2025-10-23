@@ -57,7 +57,7 @@ const ResumePage = () => {
 								marginBottom: "1rem",
 							}}
 						>
-							Software Engineer (Full Stack & DevOps)
+							Software Engineer (Full Stack & Infrastructure)
 						</h2>
 						<div
 							style={{
@@ -72,56 +72,10 @@ const ResumePage = () => {
 							}}
 						>
 							<p>Vancouver</p>
-							<p>
-								<a
-									href="tel:+16044463529"
-									style={{ color: "#FF6B35", textDecoration: "none" }}
-									onMouseOver={(e) =>
-										(e.currentTarget.style.textDecoration = "underline")
-									}
-									onMouseOut={(e) =>
-										(e.currentTarget.style.textDecoration = "none")
-									}
-								>
-									(604) 446 3529
-								</a>
-							</p>
-							<p>
-								<a
-									href="mailto:pkvac89@outlook.com"
-									style={{ color: "#FF6B35", textDecoration: "none" }}
-									onMouseOver={(e) =>
-										(e.currentTarget.style.textDecoration = "underline")
-									}
-									onMouseOut={(e) =>
-										(e.currentTarget.style.textDecoration = "none")
-									}
-								>
-									pkvac89@outlook.com
-								</a>
-							</p>
+							<p>(604) 446 3529</p>
+							<p>pkvac89@outlook.com</p>
 						</div>
 					</header>
-
-					{/* Certifications */}
-					<section style={{ marginBottom: "2rem" }}>
-						<h2
-							style={{
-								fontSize: "1.5rem",
-								color: "#FF6B35",
-								marginBottom: "1rem",
-								paddingBottom: "0.5rem",
-							}}
-						>
-							CERTIFICATIONS
-						</h2>
-						<ul style={{ listStyleType: "none", paddingLeft: "1rem" }}>
-							<li style={{ display: "flex", alignItems: "center" }}>
-								<span style={{ marginRight: "0.5rem" }}>•</span>
-								AWS Certified Cloud Practitioner
-							</li>
-						</ul>
-					</section>
 
 					{/* Technical Skills */}
 					<section style={{ marginBottom: "2rem" }}>
@@ -144,17 +98,7 @@ const ResumePage = () => {
 								}}
 							>
 								<span style={{ marginRight: "0.5rem" }}>•</span>
-								AWS Cloud & Infrastructure
-							</li>
-							<li
-								style={{
-									display: "flex",
-									alignItems: "center",
-									marginBottom: "0.5rem",
-								}}
-							>
-								<span style={{ marginRight: "0.5rem" }}>•</span>
-								Docker
+								Docker & Kubernetes
 							</li>
 							<li
 								style={{
@@ -174,12 +118,33 @@ const ResumePage = () => {
 								}}
 							>
 								<span style={{ marginRight: "0.5rem" }}>•</span>
-								Java (Spring), Typescript, React, Node.js — Full Stack
-								Development
+								Golang, Typescript, React, Node.js — Full Stack Development
+							</li>
+							<li
+								style={{
+									display: "flex",
+									alignItems: "center",
+									marginBottom: "0.5rem",
+								}}
+							>
+								<span style={{ marginRight: "0.5rem" }}>•</span>
+								Microservices Architecture & Design
+							</li>
+
+							<li
+								style={{
+									display: "flex",
+									alignItems: "center",
+									marginBottom: "0.5rem",
+								}}
+							>
+								<span style={{ marginRight: "0.5rem" }}>•</span>
+								HTML & CSS
 							</li>
 							<li style={{ display: "flex", alignItems: "center" }}>
 								<span style={{ marginRight: "0.5rem" }}>•</span>
-								HTML & CSS
+								AWS Certified Cloud Practitioner Certification, Google Cloud
+								Platform (GCP) - In Progress
 							</li>
 						</ul>
 					</section>
@@ -196,12 +161,91 @@ const ResumePage = () => {
 						>
 							PERSONAL PROJECT EXPERIENCE
 						</h2>
-						<ul style={{ listStyleType: "none", paddingLeft: "1rem" }}>
-							<li style={{ display: "flex", alignItems: "center" }}>
-								<span style={{ marginRight: "0.5rem" }}>•</span>
-								My Big Day (wedding app)
-							</li>
-						</ul>
+						<div style={{ marginBottom: "1rem" }}>
+							<h3
+								style={{
+									fontSize: "1.1rem",
+									fontWeight: "bold",
+									marginBottom: "0.5rem",
+								}}
+							>
+								E-Commerce Platform Builder
+							</h3>
+							<ul style={{ listStyleType: "none", paddingLeft: "1rem" }}>
+								<li
+									style={{
+										display: "flex",
+										alignItems: "flex-start",
+										marginBottom: "0.5rem",
+									}}
+								>
+									<span style={{ marginRight: "0.5rem" }}>•</span>
+									<span>
+										Full-stack e-commerce platform built in Golang allowing
+										users to create online stores with integrated marketing
+										sites
+									</span>
+								</li>
+								<li
+									style={{
+										display: "flex",
+										alignItems: "flex-start",
+										marginBottom: "0.5rem",
+									}}
+								>
+									<span style={{ marginRight: "0.5rem" }}>•</span>
+									<span>
+										Microservices architecture with separate services for user
+										management, product catalog, and order processing
+									</span>
+								</li>
+								<li
+									style={{
+										display: "flex",
+										alignItems: "flex-start",
+										marginBottom: "0.5rem",
+									}}
+								>
+									<span style={{ marginRight: "0.5rem" }}>•</span>
+									<span>
+										Product integration with external hosted marketing domains
+										and SEO optimization
+									</span>
+								</li>
+								<li
+									style={{
+										display: "flex",
+										alignItems: "flex-start",
+										marginBottom: "0.5rem",
+									}}
+								>
+									<span style={{ marginRight: "0.5rem" }}>•</span>
+									<span>
+										Authentication system and Stripe payment integration for
+										secure transactions
+									</span>
+								</li>
+								<li
+									style={{
+										display: "flex",
+										alignItems: "flex-start",
+										marginBottom: "0.5rem",
+									}}
+								>
+									<span style={{ marginRight: "0.5rem" }}>•</span>
+									<span>
+										Comprehensive test suite written in Go covering all API
+										functionality
+									</span>
+								</li>
+								<li style={{ display: "flex", alignItems: "flex-start" }}>
+									<span style={{ marginRight: "0.5rem" }}>•</span>
+									<span>
+										Private repository, currently in active development
+									</span>
+								</li>
+							</ul>
+						</div>
 					</section>
 
 					{/* Professional Experience */}
@@ -217,6 +261,165 @@ const ResumePage = () => {
 							PROFESSIONAL EXPERIENCE
 						</h2>
 
+						{/* PartnershipRx */}
+						<div style={{ marginBottom: "2rem" }}>
+							<h3
+								style={{
+									fontSize: "1.25rem",
+									fontWeight: "bold",
+									marginBottom: "0.5rem",
+								}}
+							>
+								FULL STACK DEVELOPER, PARTNERSHIPRX — APRIL 2025 - NOVEMBER 2025
+							</h3>
+
+							<div className="ml-4">
+								<p className="font-bold mb-2">
+									Pharmaceutical Commerce Platform Development
+								</p>
+								<div className="mb-2">
+									<a
+										href="https://www.pillexa.com/"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-brand-orange hover:underline"
+									>
+										www.pillexa.com
+									</a>
+								</div>
+								<ul className="list-none pl-4">
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Full Stack Developer for pharmaceutical commerce platform
+											built with MedusaJS v1
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Developed multi-physician network integration with dynamic
+											electronic physician signatures on orders coming through
+											the commerce platform
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Built physician network management system on admin UI
+											side, with customer-facing interface for order placement
+											and tracking
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Implemented complete in-house order workflow: physician
+											approval → pharmacy review → fulfillment and shipping
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Worked on 'Prepare' brand - travel medical emergency kit
+											with gender-specific medications and insurance integration
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Independently developed and released RxSkin brand -
+											extended and forked from main commerce platform
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Implemented subscription-based system with recurring
+											Stripe payment intents, refund capabilities, and detailed
+											compliance logging
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Developed both admin UI and customer UI using NextJS
+											framework with Chakra UI, React, and TypeScript
+										</span>
+									</li>
+									<li
+										style={{
+											display: "flex",
+											alignItems: "flex-start",
+											marginBottom: "0.5rem",
+										}}
+									>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Extended Node.js backend with custom route definitions and
+											managed database migrations for entity updates
+										</span>
+									</li>
+									<li style={{ display: "flex", alignItems: "flex-start" }}>
+										<span style={{ marginRight: "0.5rem" }}>•</span>
+										<span>
+											Infrastructure: Backend hosted on Aptible, Admin and
+											Customer UI deployed on Vercel. Tech Stack: MedusaJS v1,
+											TypeORM, PostgreSQL database for service definitions
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
 						{/* LNG Studios */}
 						<div style={{ marginBottom: "2rem" }}>
 							<h3
@@ -226,7 +429,7 @@ const ResumePage = () => {
 									marginBottom: "0.5rem",
 								}}
 							>
-								FULL STACK DEVELOPER, LNG STUDIOS — JULY 2024 - PRESENT
+								FULL STACK DEVELOPER, LNG STUDIOS — JULY 2024 - APRIL 2025
 							</h3>
 
 							<div className="ml-4">
@@ -236,7 +439,6 @@ const ResumePage = () => {
 								<ul className="list-none pl-4">
 									<li className="flex flex-col mb-2">
 										<div className="flex items-start">
-											<span className="mr-2">•</span>
 											<a
 												href="https://m6.proxima-portals.com"
 												target="_blank"
